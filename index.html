@@ -14,7 +14,9 @@
 
   <body class="font-sans bg-gray-100 pt-20">
     <!-- Tempat header disisipkan -->
-    <div id="header-container"></div>
+    <section>
+      <div id="header-container"></div>
+    </section>
 
     <main class="p-6 bg-white shadow max-w-5xl mx-auto my-4 rounded-lg">
       <section class="px-3">
@@ -48,7 +50,6 @@
           </h2>
 
           <div class="flex flex-wrap justify-center gap-8 md:gap-12">
-            <!-- Item 1 -->
             <!-- Item 1 -->
             <div class="text-center group w-28 sm:w-32 md:w-36 relative">
               <div
@@ -213,14 +214,14 @@
         class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden"
       >
         <div
-          class="bg-white rounded-lg overflow-hidden max-w-lg w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2"
+          class="bg-white rounded-lg overflow-hidden w-11/12 sm:w-5/6 md:w-3/4 lg:w-2/3 xl:w-1/2"
         >
           <div class="relative">
             <!-- Gambar Banner -->
             <img
               src="assets/iklan.jpeg"
               alt="Promo Banner"
-              class="w-full h-auto object-cover"
+              class="w-full h-auto max-h-[90vh] object-cover"
             />
             <!-- Tombol Tutup -->
             <button
@@ -241,85 +242,6 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <!-- SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <!-- Fireworks JS dan CSS -->
-    <script>
-      function randomBetween(a, b) {
-        return a + Math.random() * (b - a);
-      }
-
-      function showFireworks(e, el) {
-        const container = el.parentElement.querySelector(
-          ".fireworks-container"
-        );
-        for (let i = 0; i < 15; i++) {
-          const particle = document.createElement("div");
-          const angle = (2 * Math.PI * i) / 15;
-          const distance = randomBetween(40, 80);
-          const color = `hsl(${randomBetween(0, 360)}, 80%, 50%)`;
-          particle.className = "firework-particle pointer-events-none";
-          particle.style.left = "50%";
-          particle.style.top = "50%";
-          particle.style.background = color;
-          particle.style.setProperty("--dx", `${Math.cos(angle) * distance}px`);
-          particle.style.setProperty("--dy", `${Math.sin(angle) * distance}px`);
-          container.appendChild(particle);
-
-          setTimeout(() => {
-            particle.style.opacity = 0;
-            particle.style.transform = `translate(var(--dx), var(--dy)) scale(0.6)`;
-          }, 10);
-
-          setTimeout(() => {
-            particle.remove();
-          }, 800);
-        }
-      }
-    </script>
-
-    <!-- Scroll Up -->
-    <script>
-      const scrollBtn = document.getElementById("scrollToTopBtn");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          scrollBtn.classList.remove("hidden");
-        } else {
-          scrollBtn.classList.add("hidden");
-        }
-      });
-
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    </script>
-
-    <!-- Alert banner saat akses home website -->
-    <script>
-      // Fungsi untuk membuka dan menutup modal
-      function openPromoModal() {
-        document.getElementById("promoModal").classList.remove("hidden");
-      }
-
-      function closePromoModal() {
-        document.getElementById("promoModal").classList.add("hidden");
-      }
-
-      // Pasang event ke tombol/menu "Home"
-      document.addEventListener("DOMContentLoaded", function () {
-        const homeMenu = document.querySelector("#menuHome"); // ganti ID sesuai menu Home kamu
-        if (homeMenu) {
-          homeMenu.addEventListener("click", function (e) {
-            e.preventDefault(); // kalau kamu ingin mencegah reload atau navigasi
-            openPromoModal();
-          });
-        }
-      });
-    </script>
   </body>
 </html>

@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Setelah header dimuat, aktifkan tombol hamburger
       setupHamburgerToggle();
+      // Setelah header dimuat, aktifkan tombol hamburger
+      openPromoModal();
+
     });
+  
 
   // Tampilkan waktu awal (jika ada elemen #currentTime)
   showCurrentTime();
@@ -26,6 +30,48 @@ function setupHamburgerToggle() {
   }
 }
 
+//  Alert banner saat akses home website
+
+      // Fungsi buka & tutup modal
+      function openPromoModal() {
+        document.getElementById("promoModal").classList.remove("hidden");
+      }
+
+      function closePromoModal() {
+        document.getElementById("promoModal").classList.add("hidden");
+      }
+
+      // Event klik menu Home
+      document.addEventListener("DOMContentLoaded", function () {
+        const homeMenu = document.getElementById("menuHome");
+        if (homeMenu) {
+          homeMenu.addEventListener("click", function (e) {
+            e.preventDefault(); // Mencegah navigasi langsung
+            openPromoModal();
+          });
+        }
+      });
+
+// Scroll Up 
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.remove("hidden");
+        } else {
+          scrollBtn.classList.add("hidden");
+        }
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+
+
 // Tampilkan waktu sekarang (dipanggil saat DOM ready)
 function showCurrentTime() {
   const timeSpan = document.getElementById("currentTime");
@@ -34,6 +80,7 @@ function showCurrentTime() {
     timeSpan.textContent = now;
   }
 }
+
 
 
 // Form Menu Message Us
@@ -79,6 +126,8 @@ document.getElementById("formInput").addEventListener("submit", function (e) {
   this.reset();
 });
 
+
+
 // Fungsi submit form Landing Page
 
 function handleSubmit(event) {
@@ -114,3 +163,42 @@ function handleSubmit(event) {
   return false;
 }
 
+
+    
+     
+
+
+
+    
+// Fireworks JS dan CSS
+function randomBetween(a, b) {
+        return a + Math.random() * (b - a);
+      }
+
+      function showFireworks(e, el) {
+        const container = el.parentElement.querySelector(
+          ".fireworks-container"
+        );
+        for (let i = 0; i < 15; i++) {
+          const particle = document.createElement("div");
+          const angle = (2 * Math.PI * i) / 15;
+          const distance = randomBetween(40, 80);
+          const color = `hsl(${randomBetween(0, 360)}, 80%, 50%)`;
+          particle.className = "firework-particle pointer-events-none";
+          particle.style.left = "50%";
+          particle.style.top = "50%";
+          particle.style.background = color;
+          particle.style.setProperty("--dx", `${Math.cos(angle) * distance}px`);
+          particle.style.setProperty("--dy", `${Math.sin(angle) * distance}px`);
+          container.appendChild(particle);
+
+          setTimeout(() => {
+            particle.style.opacity = 0;
+            particle.style.transform = `translate(var(--dx), var(--dy)) scale(0.6)`;
+          }, 10);
+
+          setTimeout(() => {
+            particle.remove();
+          }, 800);
+        }
+      }
