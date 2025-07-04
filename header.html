@@ -1,0 +1,96 @@
+<!-- Navbar -->
+<header class="fixed top-0 w-full z-50 bg-white shadow-md">
+  <div class="flex justify-between items-center p-4 max-w-6xl mx-auto">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="img/logo.png" alt="Logo" class="h-10 w-10 rounded-full mr-2" />
+      <span class="font-bold text-lg">My Website</span>
+    </div>
+
+    <!-- Hamburger button (mobile) -->
+    <button id="nav-toggle" class="md:hidden text-gray-700 focus:outline-none">
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </button>
+
+    <!-- Desktop Menu -->
+    <nav id="nav-menu" class="hidden md:block">
+      <ul class="flex space-x-4">
+        <li>
+          <a
+            href="index.html"
+            class="block px-3 py-2 text-gray-700 hover:bg-yellow-300 hover:text-black rounded transition"
+            >Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="profile.html"
+            class="block px-3 py-2 text-gray-700 hover:bg-yellow-300 hover:text-blue-600 rounded transition"
+            >Our Profile</a
+          >
+        </li>
+        <li>
+          <a
+            href="Archievement.html"
+            class="block px-3 py-2 text-gray-700 hover:bg-yellow-300 hover:text-blue-600 rounded transition"
+            >Achievement</a
+          >
+        </li>
+        <li>
+          <a
+            href="Message.html"
+            class="block px-3 py-2 text-gray-700 hover:bg-yellow-300 hover:text-blue-600 rounded transition"
+            >Message Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="nav-dropdown" class="md:hidden hidden px-4 pb-4 bg-white shadow-md">
+    <ul class="space-y-2">
+      <li>
+        <a
+          href="index.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-yellow-300 hover:text-blue-600 rounded transition"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="profile.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-yellow-300 hover:text-blue-600 rounded transition"
+          >Our Profile</a
+        >
+      </li>
+      <li>
+        <a
+          href="Archievement.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-yellow-300 hover:text-blue-600 rounded transition"
+          >Achievement</a
+        >
+      </li>
+      <li>
+        <a
+          href="Message.html"
+          class="block px-4 py-2 text-gray-700 hover:bg-yellow-300 hover:text-blue-600 rounded transition"
+          >Message Us</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>
