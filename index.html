@@ -10,6 +10,12 @@
       rel="stylesheet"
     />
     <link type="text/css" href="css/style.css" rel="stylesheet" />
+
+    <!-- Flowbite CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body class="font-sans bg-gray-100 pt-20">
@@ -28,16 +34,105 @@
               Hi <span id="userName"></span>, Welcome To Website
             </h1>
             <p class="text-gray-600 text-base md:text-lg">
-              Ini adalah website latihan pertama
+              Ini adalah Website untuk program Mini-project
             </p>
           </div>
 
           <div class="flex justify-center">
-            <img
-              src="assets/banner.png"
-              alt="RevoU"
-              class="min-w-screen flex justify-center h-auto object-cover"
-            />
+            <div
+              id="default-carousel"
+              class="relative w-full"
+              data-carousel="slide"
+            >
+              <!-- Carousel wrapper -->
+              <div
+                class="relative h-56 sm:h-72 md:h-96 overflow-hidden rounded-xl"
+              >
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img
+                    src="assets/banner.png"
+                    class="absolute block w-full h-full object-cover object-center"
+                    alt="Banner 1"
+                  />
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img
+                    src="assets/iklan.jpeg"
+                    class="absolute block w-full h-full object-cover object-center"
+                    alt="Banner 2"
+                  />
+                </div>
+              </div>
+
+              <!-- Slider indicators -->
+              <div
+                class="absolute z-30 flex space-x-3 bottom-5 left-1/2 -translate-x-1/2"
+              >
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full bg-white/60 hover:bg-white"
+                  aria-label="Slide 1"
+                  data-carousel-slide-to="0"
+                ></button>
+                <button
+                  type="button"
+                  class="w-3 h-3 rounded-full bg-white/60 hover:bg-white"
+                  aria-label="Slide 2"
+                  data-carousel-slide-to="1"
+                ></button>
+              </div>
+
+              <!-- Slider controls -->
+              <button
+                type="button"
+                class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-prev
+              >
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 transition"
+                >
+                  <svg
+                    class="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 1 1 5l4 4"
+                    />
+                  </svg>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                data-carousel-next
+              >
+                <span
+                  class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 transition"
+                >
+                  <svg
+                    class="w-5 h-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 6 10"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m1 9 4-4-4-4"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
           </div>
         </section>
 
@@ -227,7 +322,8 @@
             <button
               onclick="closePromoModal()"
               class="absolute top-2 right-2 bg-white hover:bg-red-500 hover:text-white text-gray-700 rounded-full p-1 shadow transition"
-              aria-label="Close" >
+              aria-label="Close"
+            >
               ✕
             </button>
           </div>
@@ -242,5 +338,8 @@
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Flowbite JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
   </body>
 </html>
