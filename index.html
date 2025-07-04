@@ -184,7 +184,57 @@
           </div>
         </section>
       </section>
+
+      <!-- Tombol Scroll to Top -->
+      <button
+        id="scrollToTopBtn"
+        aria-label="Scroll to Top"
+        class="fixed bottom-6 right-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-4 rounded-full shadow-xl hidden hover:scale-110 hover:shadow-2xl transition-all duration-300 z-50"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M5 15l7-7 7 7"
+          ></path>
+        </svg>
+      </button>
+
+      <!-- Modal Banner Iklan -->
+      <div
+        id="promoModal"
+        class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden"
+      >
+        <div
+          class="bg-white rounded-lg overflow-hidden max-w-lg w-11/12 sm:w-3/4 md:w-2/3 lg:w-1/2"
+        >
+          <div class="relative">
+            <!-- Gambar Banner -->
+            <img
+              src="assets/iklan.jpeg"
+              alt="Promo Banner"
+              class="w-full h-auto object-cover"
+            />
+            <!-- Tombol Tutup -->
+            <button
+              onclick="closePromoModal()"
+              class="absolute top-2 right-2 bg-white hover:bg-red-500 hover:text-white text-gray-700 rounded-full p-1 shadow transition"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
+
     <!-- Footer -->
     <footer class="text-right pr-4 text-sm text-gray-500 py-4 border-t">
       Created By Deki Firmansyah Copyright &copy; 2025
@@ -227,6 +277,49 @@
           }, 800);
         }
       }
+    </script>
+
+    <!-- Scroll Up -->
+    <script>
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.remove("hidden");
+        } else {
+          scrollBtn.classList.add("hidden");
+        }
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+
+    <!-- Alert banner saat akses home website -->
+    <script>
+      // Fungsi untuk membuka dan menutup modal
+      function openPromoModal() {
+        document.getElementById("promoModal").classList.remove("hidden");
+      }
+
+      function closePromoModal() {
+        document.getElementById("promoModal").classList.add("hidden");
+      }
+
+      // Pasang event ke tombol/menu "Home"
+      document.addEventListener("DOMContentLoaded", function () {
+        const homeMenu = document.querySelector("#menuHome"); // ganti ID sesuai menu Home kamu
+        if (homeMenu) {
+          homeMenu.addEventListener("click", function (e) {
+            e.preventDefault(); // kalau kamu ingin mencegah reload atau navigasi
+            openPromoModal();
+          });
+        }
+      });
     </script>
   </body>
 </html>
